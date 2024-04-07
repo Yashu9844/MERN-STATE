@@ -3,7 +3,7 @@ import bcryptjs from 'bcryptjs';
 
 
 
-export const signup = async (req, res) => {
+export const signup = async (req, res,next) => {
     try {
       const { username, email, password } = req.body;
   
@@ -16,7 +16,7 @@ export const signup = async (req, res) => {
       }
   
       // Create a new user instance
-      const newUser = new User({ username, email, password:hashedPassword`` });
+      const newUser = new User({ username, email, password:hashedPassword });
   
       // Save the new user
       await newUser.save();
@@ -24,9 +24,7 @@ export const signup = async (req, res) => {
       // Respond with success message
       return res.status(201).json('User created successfully');
     } catch (error) {
-      // Handle any errors
-      console.error(error);
-      return res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   };
   
