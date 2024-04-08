@@ -35,7 +35,7 @@ const navigate = useNavigate()
       body:JSON.stringify(formData)
     })
         const data = await res.json();
-        console.log(data);
+     
         
         
         if(data.success === false){
@@ -56,7 +56,7 @@ const navigate = useNavigate()
     }
    }
 
- console.log(formData)
+
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
