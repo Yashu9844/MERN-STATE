@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import {useDispatch,useSelector} from 'react-redux'
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice'
+import OAuth from '../components/OAuth'
 
 
 const Signin = () => {
@@ -69,6 +70,8 @@ const dispatch = useDispatch();
       <button disabled={loading} className='bg-slate-700 text-white uppercase rounded-lg p-3 hover:opacity-95 disabled:opacity-80 '>
         {loading ? 'Loading...' : 'Sign in'}
       </button>
+
+      <OAuth/>
 
      </form>
      <div className="flex gap-1 mt-3">
