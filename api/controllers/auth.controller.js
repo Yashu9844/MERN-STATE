@@ -84,3 +84,13 @@ export const google = async (req, res, next)=>{
   }
 
 }
+export const signout = async (req,res,next) =>{
+  try {
+    res.clearCookie('access_token')
+    res.status(200).json("User has been looged out!");
+
+    
+  } catch (error) {
+    next(error)
+  }
+}
