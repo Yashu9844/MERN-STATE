@@ -32,3 +32,23 @@ export const updateUser = async (req,res,next)=>{
     }
 
 }
+
+export const deleteUser = async (req,res,next)=>{
+    
+
+
+    if(req.user.id !== req.params.id){ // user is coming from the verify user 
+        return next(errorHandler(401,'You can only delete your account'))
+    }
+
+    try {
+   await User.findByIdAndDelete(req.params.id)
+   res.status(200).json("User has been deleted")
+        
+
+
+    } catch (error) {
+        next(error);
+    }
+
+}
