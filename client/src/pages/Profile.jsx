@@ -5,6 +5,7 @@ import {getDownloadURL, getStorage,ref, uploadBytesResumable} from 'firebase/sto
 import { app } from '../firebase'
 import { updateUserFailure,updateUserStart,updateUserSuccess,deleteUserFailure,deleteUserStart,deleteUserSuccess,signOutUserFailure,signOutUserStart,signOutUserSuccess} from '../redux/user/userSlice'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 
@@ -158,7 +159,8 @@ const handleDeleteUser = async ()=>{
 <button disabled={loading} className='uppercase bg-slate-700 p-3 rounded-lg text-white'>
   {loading ? 'Loading...':'Update'}
 </button>
-<button className='uppercase bg-green-700 p-3 rounded-lg text-white'>Create listing</button>
+<Link  className='bg-green-700 p-3 rounded-lg uppercase text-center text-white hover:opacity-95' 
+to={"/create-listing"}>create listing</Link>
        
 </form>
 <div className="flex justify-between mt-3
