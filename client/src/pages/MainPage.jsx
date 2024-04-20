@@ -19,7 +19,7 @@ const MainPage = () => {
     bathrooms:1,
     regularPrice:50,
     discountPrice:0,
-    offer:'',
+    offer:false,
     parking:false,
     furnished:false,
 
