@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp'
 import PrivateRoute from './components/PrivateRoute'
 import MainPage from './pages/MainPage'
 import UpdateListing from './pages/UpdateListing'
+import Listing from './pages/Listing'
 
 
 
@@ -28,6 +29,8 @@ const App = () => {
         <Route path='/update-listing/:listingId' element={<UpdateListing/>} /> 
         </Route>
         <Route path='/sign-up' element={<SignUp/>}/>
+        <Route path='/listing/:listingId' element={<Listing/>}/>
+
       </Routes>
     </BrowserRouter>
   )
