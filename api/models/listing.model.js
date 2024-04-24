@@ -1,5 +1,5 @@
 import mongoose  from "mongoose";
-import { type } from "os";
+
 
 const listingSchema = new mongoose.Schema({
     name:{
@@ -18,11 +18,16 @@ const listingSchema = new mongoose.Schema({
         type:Number,
         requried:true,
     },
-    discountedPrice:{
+    discountPrice:{
         type:Number,
         requried:true,
     },
     bathrooms:
+    {
+        type:Number,
+        requried:true,
+    },  
+    bedrooms:
     {
         type:Number,
         requried:true,
