@@ -10,6 +10,7 @@ import PrivateRoute from './components/PrivateRoute'
 import MainPage from './pages/MainPage'
 import UpdateListing from './pages/UpdateListing'
 import Listing from './pages/Listing'
+import Search from './pages/Search'
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
         </Route>
         <Route path='/sign-up' element={<SignUp/>}/>
         <Route path='/listing/:listingId' element={<Listing/>}/>
+        <Route path='/search' element={<Search/>}/>
 
       </Routes>
     </BrowserRouter>
